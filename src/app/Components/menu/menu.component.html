@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><mat-icon>view_list</mat-icon> Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/usuario"><mat-icon>account_circle</mat-icon> Usuario</a>
+      <a mat-list-item href="/vehiculo"><mat-icon>shopping_cart</mat-icon> Vehiculo</a>
+      <a mat-list-item href="/parqueadero"><mat-icon>lock</mat-icon> Parqueadero</a>
+      <a mat-list-item href="/factura"><mat-icon>receipt</mat-icon> Factura</a>
+      <a mat-list-item href="/tarifa"><mat-icon>watch_later</mat-icon> Tarifa</a>
+      <a mat-list-item href="/reportes"><mat-icon>assessment</mat-icon> Reportes</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Parking</span>
+    </mat-toolbar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+      </mat-sidenav-content>
+</mat-sidenav-container>
