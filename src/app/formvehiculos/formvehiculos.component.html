@@ -1,0 +1,73 @@
+<form [formGroup]="formvehiculo" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Crea nueva cuenta como PROPIETARIO
+          <div>
+              Todo está en Wolfparking
+          </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        
+        </div>
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre" formControlName="Nombre">
+            <mat-error *ngIf="formvehiculo.controls['Nombre'].hasError('required')">
+              *Nombre <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Apellido" formControlName="Apellido">
+          <mat-error *ngIf="formvehiculo.controls['Apellido'].hasError('required')">
+            *Apellido<strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" formControlName="Email">
+          <mat-error *ngIf="formvehiculo.controls['Email'].hasError('required')">
+            *Email<strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Vehiculo" formControlName="Email">
+      <mat-error *ngIf="formvehiculo.controls['Vehiculo'].hasError('required')">
+        Vehiculo<strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+</div>
+</div>
+<div class="row">
+  <div class="col">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Placa" formControlName="Placa">
+      <mat-error *ngIf="formvehiculo.controls['Placa'].hasError('required')">
+        Placa<strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+</div>
+</div>
+        
+     
+     
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Crear cuenta</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

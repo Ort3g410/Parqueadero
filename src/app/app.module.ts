@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,7 +16,6 @@ import { ParqueaderoComponent } from './Components/parqueadero/parqueadero.compo
 import { FacturaComponent } from './Components/factura/factura.component';
 import { TarifaComponent } from './Components/tarifa/tarifa.component';
 import { ReportesComponent } from './Components/reportes/reportes.component';
-import { TablaComponent } from './Components/tabla/tabla.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -27,13 +25,33 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
+/**import { DashboardComponent } from './Components/dashboard/dashboard.component';*/
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
+import { AvatarModule } from 'ngx-avatar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
+import { TabletemplateComponent } from './Components/tabletemplate/tabletemplate.component';
+import { FormvehiculosComponent } from './formvehiculos/formvehiculos.component';
+import { FormparqueaderoComponent } from './formparqueadero/formparqueadero.component';
+
+import { FormreportesComponent } from './formreportes/formreportes.component';
+import { FormfacturaComponent } from './formfactura/formfactura.component';
+import { LoginComponent } from './Components/login/login.component';
+
+
+
+
+
+
+
+
+
 
 
 @NgModule({
-  declarations: [
+  declarations:[
     AppComponent,
     MenuComponent,
     UsuarioComponent,
@@ -42,11 +60,26 @@ import { MatMenuModule } from '@angular/material/menu';
     FacturaComponent,
     TarifaComponent,
     ReportesComponent,
-    TablaComponent,
     FormularioComponent,
-    DashboardComponent
+    TabletemplateComponent,
+    FormvehiculosComponent,
+    FormparqueaderoComponent,
+    FormreportesComponent,
+    FormfacturaComponent,
+    LoginComponent,
+   
+    
+    
+    
+    
+    
+   
+    
+   
+    /*DashboardComponent*/
   ],
-  imports: [
+  imports: [[BrowserModule, AppRoutingModule],
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -65,7 +98,13 @@ import { MatMenuModule } from '@angular/material/menu';
     MatCardModule,
     ReactiveFormsModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule,
+    AvatarModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

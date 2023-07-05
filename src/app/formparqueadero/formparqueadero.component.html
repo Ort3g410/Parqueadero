@@ -1,0 +1,60 @@
+<form [formGroup]="formparqueadero" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Publicar nuevo PARQUEADERO
+       <div> Ofrece tu parqueadero y genera ingresos</div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre parqueadero" formControlName="Nombreparqueadero">
+            <mat-error *ngIf="formparqueadero.controls['Nombreparqueadero'].hasError('required')">
+              Nombreparqueadero <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Direccion" formControlName="Direccion">
+            <mat-error *ngIf="formparqueadero.controls['Direccion'].hasError('required')">
+              Direccion <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Telefono" formControlName="Telefono">
+            <mat-error *ngIf="formparqueadero.controls['Telefono'].hasError('required')">
+              Telefono <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Cupos" formControlName="Cupos">
+            <mat-error *ngIf="formparqueadero.controls['Cupos'].hasError('required')">
+            Cupos<strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Publica tu parqueadero</button>
+    </mat-card-actions>
+    
+  </mat-card>
+ 
+</form>
