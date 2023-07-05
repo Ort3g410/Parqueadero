@@ -1,0 +1,43 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family:montserrat;
+  background-image: url(../login/img/35681hd.jpg) ;
+  background-size:cover ;
+  height: 100vh;
+  
+}
+
+.container{
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  transform: translate(-50px, -50px);
+  width: 400px;
+  background-color: rgb(65, 65, 66);
+  border-radius: 10px;
+}
+h1{
+  color: #ebe8e8;
+}
+.container h1{
+  text-align: center;
+  font-family:montserrat;
+  padding: 0 0 20px 0;
+  border-bottom:  1px solid rgb(223, 174, 52);
+}
+
+.container form{
+  padding: 0% 40px;
+  box-sizing: border-box;
+}
+
+form .username{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0 ;
+} 
+
+a{
+  color: #ebe8e8;
+}
