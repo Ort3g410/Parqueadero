@@ -1,0 +1,65 @@
+<form [formGroup]="formfactura" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Tu factura a la mano </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Numero de factura" formControlName="Numerodefactura"></textarea>
+            <mat-error *ngIf="formfactura.controls['Numerodefactura'].hasError('required')">
+              Numerodefactura<strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Placa" formControlName="Placa">
+            <mat-error *ngIf="formfactura.controls['Placa'].hasError('required')">
+              Placa<strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Tipo" formControlName="Tipo">
+              <mat-option *ngFor="let Tipo of Tipo" [value]="Tipo.abbreviation">
+                {{ Tipo.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="formfactura.controls['Tipo'].hasError('required')">
+              Tipo  <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput #Numerofactura maxlength="5" placeholder="Numero factura" type="number" formControlName="Numerofactura">
+            <mat-hint align="end">{{Numerofactura.value.length}} / 5</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-radio-group formControlName="">
+            <mat-radio-button value="Ver">Ver</mat-radio-button>
+            <mat-radio-button value="Imprimir">Imprimir</mat-radio-button>
+            <mat-radio-button value="guardar">Guardar</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Tu factura a la mano</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
